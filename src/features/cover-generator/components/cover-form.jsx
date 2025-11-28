@@ -422,6 +422,7 @@ export const CoverForm = () => {
                     htmlFor="image-upload"
                     sx={{
                         display: "flex",
+                        position: "relative",
                         justifyContent: "center",
                         alignItems: "center",
                         width: "100%",
