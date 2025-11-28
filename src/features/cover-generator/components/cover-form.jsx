@@ -84,6 +84,7 @@ export const CoverForm = () => {
                     container
                     spacing={2}
                     alignItems={"center"}
+                    flexWrap="nowrap"
                 >
                     <Box
                         sx={{
@@ -421,6 +422,7 @@ export const CoverForm = () => {
                     htmlFor="image-upload"
                     sx={{
                         display: "flex",
+                        position: "relative",
                         justifyContent: "center",
                         alignItems: "center",
                         width: "100%",
