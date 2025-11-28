@@ -84,6 +84,7 @@ export const CoverForm = () => {
                     container
                     spacing={2}
                     alignItems={"center"}
+                    flexWrap="nowrap"
                 >
                     <Box
                         sx={{

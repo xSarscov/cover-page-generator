@@ -1,10 +1,12 @@
 import {useState} from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import {coverTemplates} from "@/features/cover-generator/config/cover-templates.js";
 import {CoverSelectorItem} from "@/features/cover-generator/components/cover-selector-item.jsx";
 import RadioGroup from "@mui/material/RadioGroup";
 
 export const CoverSelector = () => {
     const [selectedCoverId, setSelectedCoverId] = useState(1);
+    const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("sm"));
 
     return (
         <RadioGroup
@@ -13,10 +15,9 @@ export const CoverSelector = () => {
             value={selectedCoverId}
             onChange={(_, value) => setSelectedCoverId(Number(value))}
             sx={{
-                display: "flex",
-                flexWrap: "nowrap",
+                display: "grid",
+                gridTemplateColumns: `repeat(${isSmallScreen ? 1 : 3}, minmax(0, 1fr))`,
                 gap: 2,
-                maxWidth: "100%",
                 "& .MuiFormControlLabel-root": {
                     m: 0,
                     flex: 1,
