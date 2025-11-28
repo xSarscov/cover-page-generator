@@ -5,8 +5,11 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const CoverGenerator = () => {
+
+    const isUpMediumScreen = useMediaQuery(theme => theme.breakpoints.up('md'));
 
     return (
         <Grid
@@ -75,6 +78,11 @@ export const CoverGenerator = () => {
 
                         {/* PDF Preview */}
                         <Grid
+                            sx={{
+                                ...(isUpMediumScreen && {position: "sticky"}),
+                                ...(isUpMediumScreen && {top: 32}),
+                                ...(isUpMediumScreen && {height: "fit-content"}),
+                            }}
                             size={{
                                 xs: 12,
                                 sm: 12,
