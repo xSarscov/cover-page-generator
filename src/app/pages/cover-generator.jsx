@@ -1,15 +1,11 @@
 import {CoverForm} from "@/features/cover-generator/components/cover-form.jsx";
-import {CoverPreview} from "@/features/cover-generator/components/cover-preview.jsx";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const CoverGenerator = () => {
-
-    const isUpMediumScreen = useMediaQuery(theme => theme.breakpoints.up('md'));
 
     return (
         <Grid
@@ -58,42 +54,7 @@ export const CoverGenerator = () => {
                         </Stack>
                     </Box>
 
-                    <Grid
-                        container
-                        spacing={4}
-                    >
-                        {/* Work Form */}
-                        <Grid
-                            size={{
-                                xs: 12,
-                                sm: 12,
-                                md: 12,
-                                lg: 6,
-                                xl: 6,
-                            }}
-                        >
-                            <CoverForm
-                            />
-                        </Grid>
-
-                        {/* PDF Preview */}
-                        <Grid
-                            sx={{
-                                ...(isUpMediumScreen && {position: "sticky"}),
-                                ...(isUpMediumScreen && {top: 32}),
-                                ...(isUpMediumScreen && {height: "fit-content"}),
-                            }}
-                            size={{
-                                xs: 12,
-                                sm: 12,
-                                md: 12,
-                                lg: 6,
-                                xl: 6,
-                            }}
-                        >
-                            <CoverPreview/>
-                        </Grid>
-                    </Grid>
+                    <CoverForm/>
                 </Box>
             </Container>
         </Grid>
